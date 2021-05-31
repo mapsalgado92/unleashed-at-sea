@@ -1,5 +1,5 @@
 {
-  "name": "lisbon-boat-fest",
+  "name": "unleashed-at-sea",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "bootstrap": "^5.0.0-beta3",
+    "bootswatch": "^5.0.1",
+    "dns": "^0.2.2",
+    "emailjs-com": "^2.6.4",
+    "mongodb": "^3.6.8",
     "next": "10.2.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-bootstrap": "^1.6.0",
+    "react-dom": "17.0.2",
+    "react-image-gallery": "^1.0.9",
+    "swr": "^0.5.6"
   }
 }

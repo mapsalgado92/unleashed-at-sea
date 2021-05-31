@@ -1,3 +1,4 @@
+
 html,
 body {
   padding: 0;
@@ -13,4 +14,32 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: "Patua One"
+}
+
+.title-text {
+  font-family: 'Patua One', cursive;
+  font-size: 5em
+}
+
+.subtitle-text {
+  font-family: 'Patua One', cursive;
+  font-size: 3em
+}
+
+.header-text {
+  font-family: 'Patua One', cursive;
+  font-size: 1.5em
+}
+
+.card-overlay {
+  background-color: rgba(12, 4, 4, 0.568);
+}
+
+.sold-out {
+  background-color: rgba(65, 7, 7, 0.568);
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  margin-top: 100%
 }
