@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Jumbotron, Container, Button, Image } from 'react-bootstrap'
+import { Jumbotron, Container, Button, Image, Row, Col } from 'react-bootstrap'
 import { useState, useEffect } from "react"
 import List from '../comps/List'
 import ContactForm from '../comps/ContactForm'
@@ -38,18 +38,15 @@ export default function Home() {
           <Jumbotron className="d-flex align-items-center justify-content-center" style={{
             backgroundColor: '#FFF',
             backgroundSize: "cover",
-            minHeight: "100vh",
-            maxHeight: "95vh",
-            overflow: "hidden",
+            minHeight: "95vh",
+            maxHeight: "100vh",
+            overflow: "hidden"
           }} fluid>
             <video playsInline autoPlay muted loop height="inherit">
               <source src="bg-video.mp4" type="video/mp4"></source>
             </video>
-
-
-
             <Container className="position-absolute text-light d-flex flex-column align-items-center">
-              <Image src="logo-main.png" width="100%" className="mb-n5 "></Image>
+              <Image src="logo-main.png" width="95%" className="mb-n5 "></Image>
               <h1 className="d-none">Unleashed at Sea, The Ultimate Boat Party in Lisbon</h1>
               <h2 className="border-top border-3 w-50 display-4">27.06.2021</h2>
             </Container>
@@ -58,15 +55,19 @@ export default function Home() {
 
         <section className="text-center my-4">
           <a id="howToSection" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
-          <h1 className="subtitle-text text-warning">How To Section</h1>
-          <p>CONTENT</p>
-          <p>CONTENT</p>
-          <p>CONTENT</p>
-          <p>CONTENT</p>
-          <p>CONTENT</p>
-          <p>CONTENT</p>
-          <p>CONTENT</p>
-          <p>CONTENT</p>
+          <Container>
+            <h1 className="subtitle-text text-warning">{content.howTo.title}</h1>
+            <h1 className="header-text">{content.howTo.subtitle}</h1>
+            <Row className="my-5">
+              {content.howTo && content.howTo.items.map((item) =>
+                <Col md={6} className="px-5">
+                  <Image src={item.image} height="130em" alt={item.title} />
+                  <h3 className="header-text text-warning">{item.title}</h3>
+                  <p>{item.text}</p>
+                </Col>
+              )}
+            </Row>
+          </Container>
         </section>
 
         <section className="text-center my-4">
@@ -78,12 +79,11 @@ export default function Home() {
             backgroundPosition: "bottom",
             overflow: "hidden"
           }} fluid >
-            <div className="card-overlay py-5 px-2" style={{ height: "100%", width: "100%" }}>
+            <div className="card-overlay py-5 px-2 d-flex  flex-column justify-content-center" style={{ height: "100%", width: "100%", minHeight: "60vh" }}>
               <Container className="text-light rounded p-4">
                 <h2 className="subtitle-text">{content.hero1.title}</h2>
                 <h3 className="header-text">{content.hero1.subtitle}</h3>
                 <p className="h5">{content.hero1.text}</p>
-
               </Container>
             </div>
 
@@ -105,9 +105,10 @@ export default function Home() {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            overflow: "hidden"
+            overflow: "hidden",
+
           }} fluid >
-            <div className="card-overlay py-5 px-2" style={{ height: "100%", width: "100%" }}>
+            <div className="card-overlay py-5 px-2 d-flex  flex-column justify-content-center" style={{ height: "100%", width: "100%", minHeight: "60vh" }}>
               <Container className="text-light rounded p-4">
                 <h2 className="subtitle-text">{content.hero1.title}</h2>
                 <h3 className="header-text">{content.hero1.subtitle}</h3>
@@ -136,5 +137,35 @@ const content = {
     title: "Dummy Content",
     subtitle: "- Dummy Content -",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor dui quis finibus ultrices. Proin at massa metus. Integer mollis eleifend turpis, eget commodo ante dapibus in. Quisque vulputate nec felis id egestas. In viverra magna vitae pulvinar blandit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean ornare sapien dolor, vitae vulputate enim vulputate ac."
+  },
+  howTo: {
+    title: "How to Section",
+    subtitle: "Proin at massa metus. Integer mollis eleifend turpis, eget commodo ante dapibus in. Quisque vulputate nec felis id egestas. In viverra magna vitae pulvinar blandit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    items: [
+      {
+        title: "Title 1",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor dui quis finibus ultrices.",
+        image: "howToImage1.png",
+
+      },
+      {
+        title: "Title 2",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor dui quis finibus ultrices.",
+        image: "howToImage1.png",
+
+      },
+      {
+        title: "Title 3",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor dui quis finibus ultrices.",
+        image: "howToImage1.png",
+
+      },
+      {
+        title: "Title 4",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor dui quis finibus ultrices.",
+        image: "howToImage1.png",
+
+      }
+    ]
   }
 }

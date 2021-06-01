@@ -47,18 +47,21 @@ const Header = ({ content }) => {
 
   return (
     <nav>
-      <Navbar fixed="top" style={{ transition: "0.5s" }} className={scrolled ? "p-0 bg-primary p-0 shadow-lg" : "bg-transparent shadow-none"}>
-        <Container>
-          <Navbar.Brand id='brand' href={exampleContent.brand.link}>
+      <Navbar collapseOnSelect expand="sm" fixed="top" style={{ transition: "0.5s" }} className={scrolled ? "p-0 bg-primary p-0 shadow-lg" : "bg-transparent shadow-none"}>
+        <Container className="d-flex justify-content-between">
+          <Navbar.Brand id='brand' style={scrolled ? { opacity: 1 } : { opacity: 0 }} href={exampleContent.brand.link}>
             <img src={exampleContent.brand.image} alt="logo" style={{ transition: "0.5s", margin: "3px 0" }} height={scrolled ? "60em" : "70em"}></img>
           </Navbar.Brand>
-          <Nav className="d-flex align-items-center ">
-            {exampleContent.links && exampleContent.links.map((item) =>
-              <Nav.Link key={item.text + "header-link"} className="text-light" href={item.link} target={item.external ? "_blank" : null}>
-                {item.isButton ? <Button className={item.classes} variant={item.variant}>{item.text}</Button> : item.text}
-              </Nav.Link>
-            )}
-          </Nav>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse>
+            <Nav className="d-flex ms-auto align-items-center">
+              {exampleContent.links && exampleContent.links.map((item) =>
+                <Nav.Link key={item.text + "header-link"} className="text-light ms-auto" href={item.link} target={item.external ? "_blank" : null}>
+                  {item.isButton ? <Button className={item.classes} variant={item.variant}>{item.text}</Button> : item.text}
+                </Nav.Link>
+              )}
+            </Nav >
+          </Navbar.Collapse>
         </Container>
       </Navbar >
     </nav >

@@ -109,8 +109,8 @@ const ContactForm = ({ selectedBoat, setSelectedBoat, promos }) => {
 
         {selectedBoat &&
           <>
-            <Alert variant="dark" className="px-5 text-light"><p>If you have a Promo Code, introduce it bellow and submit this form. If that's not the case feel free to contact us through regular enquiry or through the Unleashed at Sea Whatsapp!</p>
-              <Button variant="danger" onClick={() => setSelectedBoat(null)} size="sm" >I don't have a code</Button>
+            <Alert variant="dark" className="px-5 text-light"><p>If you have a Promo Code, introduce it bellow and submit this form. If that's not the case feel free to contact us through a regular enquiry or in our social media!</p>
+              <Button variant="danger" onClick={() => setSelectedBoat(null)} size="sm" >I don't have a Code</Button>
             </Alert>
 
             <Col lg={6} className="mb-4">
