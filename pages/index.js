@@ -42,7 +42,7 @@ export default function Home() {
             maxHeight: "100vh",
             overflow: "hidden"
           }} fluid>
-            <video playsInline autoPlay muted loop height="inherit">
+            <video playsInline autoPlay muted loop height="90%">
               <source src="bg-video.mp4" type="video/mp4"></source>
             </video>
             <Container className="position-absolute text-light d-flex flex-column align-items-center">
