@@ -42,11 +42,11 @@ export default function Home() {
             maxHeight: "100vh",
             overflow: "hidden"
           }} fluid>
-            <video playsInline autoPlay muted loop height="90%">
+            <video playsInline autoPlay muted loop height="inherit">
               <source src="bg-video.mp4" type="video/mp4"></source>
             </video>
             <Container className="position-absolute text-light d-flex flex-column align-items-center">
-              <Image src="logo-main.png" width="95%" className="mb-n5 "></Image>
+              <Image src="logo-main.png" width="90%"></Image>
               <h1 className="d-none">Unleashed at Sea, The Ultimate Boat Party in Lisbon</h1>
               <h2 className="border-top border-3 w-50 display-4">27.06.2021</h2>
             </Container>
