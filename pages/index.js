@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Jumbotron, Container, Button, Image, Row, Col } from 'react-bootstrap'
+import { Jumbotron, Container, Button, Image, Row, Col, Alert } from 'react-bootstrap'
 import { useState, useEffect } from "react"
 import List from '../comps/List'
 import ContactForm from '../comps/ContactForm'
@@ -15,11 +15,6 @@ export default function Home() {
       setPromos(data.promos)
     })
   }, [])
-
-  const handleSelectBoat = (boat) => {
-    setSelectedBoat(boat)
-  }
-
 
   return (
     <>
@@ -46,9 +41,13 @@ export default function Home() {
               <source src="bg-video.mp4" type="video/mp4"></source>
             </video>
             <Container className="position-absolute text-light d-flex flex-column align-items-center">
-              <Image src="logo-main.png" width="90%"></Image>
+              <Image src="logo-main.png" className="border-bottom border-2" style={{ maxHeight: "50vh" }} fluid></Image>
               <h1 className="d-none">Unleashed at Sea, The Ultimate Boat Party in Lisbon</h1>
-              <h2 className="border-top border-3 w-50 display-4">27.06.2021</h2>
+              <Alert className="m-auto card-overlay p-2 mt-2" rounded>
+                <h2 className="mb-0 h3 ">Sunday, 27.06.2021</h2>
+                <h2 className="h3 mb-0">3pm - 7pm</h2>
+              </Alert>
+
             </Container>
           </Jumbotron>
         </section>
@@ -94,6 +93,7 @@ export default function Home() {
           <a id="boatsSection" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
           <Container>
             <h2 className="subtitle-text text-warning">Our Boat Selection</h2>
+            <h3 className="header-text text-dark">Learn more about the boats at our disposal. Each boat is unique and they have different boarding docks (see description). Be decisive and make a reservation if you find the ideal one for you and your crew!</h3>
             <List boats={boats} setSelectedBoat={setSelectedBoat} />
           </Container>
         </section>
@@ -139,31 +139,31 @@ const content = {
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor dui quis finibus ultrices. Proin at massa metus. Integer mollis eleifend turpis, eget commodo ante dapibus in. Quisque vulputate nec felis id egestas. In viverra magna vitae pulvinar blandit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean ornare sapien dolor, vitae vulputate enim vulputate ac."
   },
   howTo: {
-    title: "How to Section",
-    subtitle: "Proin at massa metus. Integer mollis eleifend turpis, eget commodo ante dapibus in. Quisque vulputate nec felis id egestas. In viverra magna vitae pulvinar blandit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    title: "The Tagus River Takeover is Back!",
+    subtitle: "You can be part of one of the most massive floating events to ever been conducted in Portugal. With Lisbon as background, you can join this massive music and party event, full of surprises and water activities!",
     items: [
       {
-        title: "Title 1",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor dui quis finibus ultrices.",
-        image: "howToImage1.png",
+        title: "Gather Your Crew",
+        text: "Form the group you wish to take on this adventure. You can also join as a Wild Card with an individual ticket in a group of crazy strangers like yourself!",
+        image: "hug.svg",
 
       },
       {
-        title: "Title 2",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor dui quis finibus ultrices.",
-        image: "howToImage1.png",
+        title: "Choose Your Ride",
+        text: "Pick your Sails! Make sure you consider your group's size when selecting a Boat.",
+        image: "boat.svg",
 
       },
       {
-        title: "Title 3",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor dui quis finibus ultrices.",
-        image: "howToImage1.png",
+        title: "Assemble at your Dock",
+        text: "Gather in the designated Dock safely before departure. We can't miss one single minute of madness!",
+        image: "sea.svg",
 
       },
       {
-        title: "Title 4",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor dui quis finibus ultrices.",
-        image: "howToImage1.png",
+        title: "Unleash the Beast!",
+        text: "We are Unleashed at Sea togeher! Prepare to Takeover...",
+        image: "safety.svg",
 
       }
     ]
