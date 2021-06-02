@@ -3,7 +3,7 @@ import { Jumbotron, Container } from 'react-bootstrap'
 const Footer = () => {
   return (
     <footer>
-      <Jumbotron className="d-flex align-items-center justify-content-center bg-dark text-center" bg="dark" style={{
+      <Jumbotron className="d-flex align-items-center justify-content-center bg-dark text-center pt-3" bg="dark" style={{
         minHeight: "30vh",
       }} fluid>
         <Container>

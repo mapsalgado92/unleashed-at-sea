@@ -44,15 +44,18 @@ export default function Home() {
             <video playsInline autoPlay muted loop height="inherit">
               <source src="bg-video.mp4" type="video/mp4"></source>
             </video>
-            <Container className="position-absolute text-light d-flex flex-column align-items-center">
-              <Image src="logo-main.png" className="border-bottom border-2" style={{ maxHeight: "50vh" }} fluid></Image>
-              <h1 className="d-none">Unleashed at Sea, The Ultimate Boat Party in Lisbon</h1>
-              <Alert className="m-auto card-overlay p-2 mt-2" rounded>
-                <h2 className="mb-0 h3 ">Sunday, 27.06.2021</h2>
-                <h2 className="h3 mb-0">14:30 - 18:30</h2>
-              </Alert>
+            <div className="position-absolute text-light d-flex flex-column align-items-center justify-content-center card-overlay" style={{ height: "100%", width: "100%" }}>
+              <Container>
+                <Image src="logo-main.png" className="border-bottom border-2" style={{ maxHeight: "50vh" }} fluid></Image>
+                <h1 className="d-none">Unleashed at Sea, The Ultimate Boat Party in Lisbon</h1>
+                <Alert className="m-auto p-2 mt-2" rounded>
+                  <h2 className="mb-0 h3 ">Sunday, 27.06.2021</h2>
+                  <h2 className="h3 mb-0">14:30 - 18:30</h2>
+                </Alert>
+              </Container>
 
-            </Container>
+
+            </div>
           </Jumbotron>
         </section>
 
@@ -63,10 +66,10 @@ export default function Home() {
             <h1 className="header-text">{content.howTo.subtitle}</h1>
             <Row className="my-5">
               {content.howTo && content.howTo.items.map((item) =>
-                <Col md={6} className="px-5">
+                <Col md={6} className="px-sm-5">
                   <Image src={item.image} height="130em" alt={item.title} />
                   <h3 className="header-text text-warning">{item.title}</h3>
-                  <p className="px-5">{item.text}</p>
+                  <p className="px-2 px-lg-5 text-center">{item.text}</p>
                 </Col>
               )}
             </Row>
@@ -83,9 +86,9 @@ export default function Home() {
             overflow: "hidden"
           }} fluid >
             <div className="card-overlay py-5 px-2 d-flex  flex-column justify-content-center" style={{ height: "100%", width: "100%", minHeight: "60vh" }}>
-              <Container className="text-light rounded p-4">
+              <Container className="text-light p-4 hero-container">
                 <h2 className="subtitle-text">{content.hero1.title}</h2>
-                <h3 className="header-text">{content.hero1.subtitle}</h3>
+                <h3 className="h3 text-warning">{content.hero1.subtitle}</h3>
                 <p className="h5">{content.hero1.text}</p>
               </Container>
             </div>
@@ -97,7 +100,7 @@ export default function Home() {
           <a id="boatsSection" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
           <Container>
             <h2 className="subtitle-text text-warning">Our Party Boats</h2>
-            <h3 className="header-text text-dark">Learn more about the boats at our disposal. Each boat is unique and they have different boarding docks (see description). Be decisive and make a reservation if you find the ideal one for you and your crew!</h3>
+            <h3 className="header-text text-dark hero-container">Learn more about the boats at our disposal. Each boat is unique and they have different boarding docks (see description). Be decisive and make a reservation if you find the ideal one for you and your crew!</h3>
             <List boats={boats} setSelectedBoat={setSelectedBoat} />
           </Container>
         </section>
@@ -113,10 +116,10 @@ export default function Home() {
 
           }} fluid >
             <div className="card-overlay py-5 px-2 d-flex  flex-column justify-content-center" style={{ height: "100%", width: "100%", minHeight: "60vh" }}>
-              <Container className="text-light rounded p-4">
-                <h2 className="subtitle-text">{content.hero1.title}</h2>
-                <h3 className="header-text">{content.hero1.subtitle}</h3>
-                <p className="h5">{content.hero1.text}</p>
+              <Container className="text-light rounded p-4 hero-container">
+                <h2 className="subtitle-text">{content.hero2.title}</h2>
+                <h3 className="h3 text-warning">{content.hero2.subtitle}</h3>
+                <p className="h5">{content.hero2.text}</p>
               </Container>
             </div>
           </Jumbotron>
@@ -138,9 +141,14 @@ export default function Home() {
 
 const content = {
   hero1: {
-    title: "We are not here to take part, We are here to takeover!",
-    subtitle: "The Unleashed at Sea ",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor dui quis finibus ultrices. Proin at massa metus. Integer mollis eleifend turpis, eget commodo ante dapibus in. Quisque vulputate nec felis id egestas. In viverra magna vitae pulvinar blandit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean ornare sapien dolor, vitae vulputate enim vulputate ac."
+    title: "Welcome to Unleashed at Sea",
+    subtitle: "We are not here to take part, we are here to takeover!",
+    text: "We have been tied up for far too long. This is your chance break free and have the party of a lifetime, with no restrictions to hold you back. Are you ready to be UNLEASHED?"
+  },
+  hero2: {
+    title: "Music, Booze & Waves",
+    subtitle: "The perfect ingredients for the greatest of all Sunsets!",
+    text: "Centralized Music so all the Crews dance as one. Drinks for all tastes and all kinds party pirates. Water activities to cool off the heat and pump up the adrenaline. What are you waiting for?"
   },
   howTo: {
     title: "The Tagus River Takeover is Back!",

@@ -19,17 +19,17 @@ a {
 
 .title-text {
   font-family: 'Patua One', cursive;
-  font-size: 5em
+  font-size: 4em
 }
 
 .subtitle-text {
   font-family: 'Patua One', cursive;
-  font-size: 3em
+  font-size: 2.5em
 }
 
 .header-text {
   font-family: 'Patua One', cursive;
-  font-size: 1.5em
+  font-size: 1.2em
 }
 
 .card-overlay {
@@ -42,4 +42,10 @@ a {
 
 .carousel-control-next-icon, .carousel-control-prev-icon {
   margin-top: 100%
+}
+
+.hero-container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto
 }
