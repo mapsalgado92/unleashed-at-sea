@@ -22,8 +22,8 @@ const List = ({ boats, setSelectedBoat }) => {
               })}
             </Carousel>
             <Card.Header className="w-100 position-absolute card-overlay pb-1">
-              <h4 className="mb-0 header-text">{boat.name} - {boat.capacity}px</h4>
-              <span className="p text-light">{boat.price}€  <i className="fas fa-anchor text-warning" />  {boat.dock} </span>
+              <h4 className="mb-0 header-text">{boat.name} - {boat.capacity}px {boat.type}</h4>
+              <span className="p alternate-font text-light">{boat.price}€  <i className="fas fa-anchor text-warning" />  {boat.dock} </span>
             </Card.Header>
             {!boat.inStock && <Image className="position-absolute" style={{ transform: "translate(5%, 50%)" }} width="90%" src="sold-out.png" />}
             <Card.Footer className="bg-dark d-flex p-2">

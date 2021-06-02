@@ -24,7 +24,7 @@ a {
 
 .subtitle-text {
   font-family: 'Patua One', cursive;
-  font-size: 2.5em
+  font-size: 2em
 }
 
 .header-text {
@@ -48,4 +48,8 @@ a {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto
+}
+
+.alternate-font {
+  font-family: "Open Sans", "cursive"
 }
