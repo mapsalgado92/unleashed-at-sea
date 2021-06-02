@@ -33,7 +33,7 @@ export default function Home() {
       </Head>
 
       <main style={{ minHeight: "100vh" }}>
-        <section id="topSection" className="mb-2 text-center">
+        <section id="topSection" className="mb-4 text-center">
           <Jumbotron className="d-flex align-items-center justify-content-center" style={{
             backgroundColor: '#FFF',
             backgroundSize: "cover",
@@ -59,11 +59,11 @@ export default function Home() {
           </Jumbotron>
         </section>
 
-        <section className="text-center my-4">
+        <section className="text-center my-5">
           <a id="howToSection" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
           <Container>
             <h1 className="subtitle-text text-warning">{content.howTo.title}</h1>
-            <h1 className="header-text">{content.howTo.subtitle}</h1>
+            <h1 className="header-text hero-container">{content.howTo.subtitle}</h1>
             <Row className="my-5">
               {content.howTo && content.howTo.items.map((item) =>
                 <Col md={6} className="px-sm-5">
@@ -76,7 +76,7 @@ export default function Home() {
           </Container>
         </section>
 
-        <section className="text-center my-4">
+        <section className="text-center my-5">
           <a id="hero1Section" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
           <Jumbotron className="d-flex align-items-center justify-content-center" style={{
             background: "url('hero3.jpg')",
@@ -96,16 +96,16 @@ export default function Home() {
           </Jumbotron>
         </section>
 
-        <section className="text-center my-4">
+        <section className="text-center my-5">
           <a id="boatsSection" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
           <Container>
             <h2 className="subtitle-text text-warning">Our Party Boats</h2>
-            <h3 className="header-text text-dark hero-container">Learn more about the boats at our disposal. Each boat is unique and they have different boarding docks (see description). Be decisive and make a reservation if you find the ideal one for you and your crew!</h3>
+            <h3 className="header-text text-dark hero-container mb-4">Learn more about the boats at our disposal. Each boat is unique and they have different boarding docks (see description). Be decisive and make a reservation if you find the ideal one for you and your crew!</h3>
             <List boats={boats} setSelectedBoat={setSelectedBoat} />
           </Container>
         </section>
 
-        <section className="text-center my-4">
+        <section className="text-center my-5">
           <a id="hero2Section" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
           <Jumbotron className="d-flex align-items-center justify-content-center " style={{
             background: "url('hero1.jpg')",
@@ -125,7 +125,7 @@ export default function Home() {
           </Jumbotron>
         </section>
 
-        <section className="mb-4 text-center">
+        <section className="my-5 text-center">
           <a id="contactsSection" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
           <Container>
             <h2 className="subtitle-text text-center text-warning">Contact Us</h2>
