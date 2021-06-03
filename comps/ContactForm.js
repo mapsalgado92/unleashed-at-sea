@@ -82,28 +82,28 @@ const ContactForm = ({ selectedBoat, setSelectedBoat, promos }) => {
   return (
     <Form className="hero-container" onSubmit={handleSubmit}>
       <Form.Group as={Row} className="text-center text-lg-left justify-content-center">
-        <Col lg={6} className="mb-4">
-          <Form.Label>First Name</Form.Label>
+        <Col sm={6} lg={4} className="mb-2">
+          <Form.Label >First Name</Form.Label>
           <Form.Control type="text" className="px-3" placeholder="First Name (required)" onChange={handleChange} id="first" required />
         </Col>
-        <Col lg={6} className="mb-4">
-          <Form.Label>Last Name</Form.Label>
+        <Col sm={6} lg={4} className="mb-2">
+          <Form.Label >Last Name</Form.Label>
           <Form.Control type="text" className="px-3" placeholder="Last Name (required)" onChange={handleChange} id="last" required />
         </Col>
-        <Col lg={6} className="mb-4">
-          <Form.Label>E-Mail Address</Form.Label>
+        <Col sm={6} lg={4} className="mb-2">
+          <Form.Label >E-Mail Address</Form.Label>
           <Form.Control type="email" className="px-3" placeholder="E-mail (required)" onChange={handleChange} id="email" required />
         </Col>
-        <Col lg={6} className="mb-4">
-          <Form.Label>Phone Contact</Form.Label>
+        <Col sm={6} lg={4} className="mb-2">
+          <Form.Label >Phone Contact</Form.Label>
           <Form.Control type="phone" className="px-3" placeholder="Phone with Country Code (required)" onChange={handleChange} id="phone" required />
         </Col>
-        <Col lg={6} className="mb-4">
-          <Form.Label>Country</Form.Label>
+        <Col sm={6} lg={4} className="mb-2">
+          <Form.Label >Country</Form.Label>
           <Form.Control type="text" className="px-3" placeholder="Country" onChange={handleChange} id="country" />
         </Col>
-        <Col lg={6} className="mb-4">
-          <Form.Label>Group Size</Form.Label>
+        <Col sm={6} lg={4} className="mb-2">
+          <Form.Label >Group Size</Form.Label>
           <Form.Control type="text" className="px-3" placeholder="Max number of people interested" onChange={handleChange} id="group-size" />
         </Col>
 
@@ -113,21 +113,21 @@ const ContactForm = ({ selectedBoat, setSelectedBoat, promos }) => {
               <Button variant="danger" onClick={() => setSelectedBoat(null)} size="sm" >I don't have a Code</Button>
             </Alert>
 
-            <Col lg={6} className="mb-4">
+            <Col md={6} className="mb-2">
               <Form.Label>Promo Code</Form.Label>
               <Form.Control type="text" className="px-3" placeholder="Enter valid Promo Code" onChange={handleChange} id="Promo" />
             </Col>
-            <Col lg={6} className="mb-4">
+            <Col md={6} className="mb-2">
               <Form.Label>Selected Boat</Form.Label>
               <Form.Control type="text" className="px-3" className="text-danger text-center" disabled={true} value={selectedBoat} id="Boat" />
             </Col>
           </>
         }
 
-        <Col lg={12} className="mb-4">
+        <Col className="mb-2">
           <Form.Label>Ask us what you need to know!</Form.Label>
-          <Form.Control as="textarea" value={info.enquiry} onChange={handleChange} id="enquiry" className="p-3" style={{
-            height: "20em", backgroundColor: "rgba(5, 5, 5, 0.02)"
+          <Form.Control as="textarea" value={info.enquiry} onChange={handleChange} id="enquiry" className="p-2" style={{
+            height: "10em", backgroundColor: "rgba(5, 5, 5, 0.02)"
           }} />
         </Col>
 

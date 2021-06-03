@@ -3,7 +3,7 @@ import { Row, Col, Card, Container, Carousel, Button, Alert, Jumbotron, Image } 
 const List = ({ boats, setSelectedBoat }) => {
   return (
 
-    <Row>
+    <Row className="justify-content-center">
       {boats ? boats.map((boat) =>
         <Col xs={12} sm={6} lg={4} className="my-2" key={boat._id + "-boat-card"}>
           <Card className="bg-dark overflow-hidden text-center text-light">
