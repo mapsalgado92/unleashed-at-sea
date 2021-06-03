@@ -63,7 +63,7 @@ export default function Home() {
             <p className="h5 alternate-font hero-container disappear-in-xs">{content.howTo.text}</p>
             <Row className="mt-5 px-sm-5">
               {content.howTo && content.howTo.items.map((item) =>
-                <Col md={6} className="mb-5">
+                <Col md={6} className="mb-3 mx-auto">
                   <Image src={item.image} height="130em" alt={item.title} />
                   <h3 className="header-text text-warning">{item.title}</h3>
                   <p className="px-2 px-lg-5 text-center alternate-font">{item.text}</p>
@@ -72,6 +72,10 @@ export default function Home() {
             </Row>
           </Container>
         </section>
+
+
+
+
         <section className="text-center my-5">
           <a id="hero1Section" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
           <Jumbotron className="d-flex align-items-center justify-content-center" style={{
@@ -87,7 +91,7 @@ export default function Home() {
                 <h3 className="h3 text-warning hero-container">{content.hero1.subtitle}</h3>
                 <Row className="mt-5 px-sm-5 d-flex justify-content-between">
                   {content.hero1 && content.hero1.items.map((item) =>
-                    <Col className="d-flex flex-column align-items-center justify-content-start" xs={6} md={2} >
+                    <Col className="d-flex flex-column align-items-center justify-content-start" xs={6} md={4} lg={2} >
                       <Image src={item.image} className="px-4 mb-2" fluid alt={item.title} />
                       <p className="header-text alternate-font">{item.title}</p></Col>
                   )}
@@ -96,6 +100,9 @@ export default function Home() {
             </div>
           </Jumbotron>
         </section>
+
+
+
         <section className="text-center my-5">
           <a id="boatsSection" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
           <Container>
@@ -117,8 +124,8 @@ export default function Home() {
           }} fluid >
             <div className="card-overlay py-5 px-2 d-flex  flex-column justify-content-center" style={{ height: "100%", width: "100%", minHeight: "60vh" }}>
               <Container className="text-light rounded p-4">
-                <h2 className="display-2">{content.hero2.title}</h2>
-                <h3 className="h3 display-2 text-warning">{content.hero2.subtitle}</h3>
+                <h2 className="display-3">{content.hero2.title}</h2>
+                <h3 className="h3 display-3 text-warning">{content.hero2.subtitle}</h3>
                 <p className="h5 alternate-font">{content.hero2.text}</p>
               </Container>
             </div>
@@ -168,12 +175,18 @@ const content = {
         text: "Sail in the direction of the music until you find the hundreds of people partying afloat. Bring your inflatables and prepare to jump in the sea and enjoy the water activities.",
         image: "inflatable.svg",
 
+      },
+      {
+        title: "Have Fun & Be Safe",
+        text: "Groups being divided by Boats makes this event compliant with Covid-19 regulations. All naval safety measures are enforced and the event is approved by all due authorities.",
+        image: "safety.svg",
+
       }]
   },
 
   hero1: {
     title: "Welcome to Unleashed at Sea",
-    subtitle: "This are the just some of the included fetures on this epic odyssey. What are you waiting for?",
+    subtitle: "Here's what to expect on this EPIC ODYSSEY",
     items: [
       {
         title: "4-Hour Boat Hire",
