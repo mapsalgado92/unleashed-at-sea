@@ -33,16 +33,16 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet" />
       </Head>
 
-      <main style={{ minHeight: "100vh" }}>
-        <section id="topSection" className="mb-4 text-center">
+      <main>
+        <section id="topSection" className="mb-4 text-center" style={{ height: "100vh" }}>
           <Jumbotron className="d-flex align-items-center justify-content-center" style={{
             backgroundColor: '#FFF',
             backgroundSize: "cover",
-            minHeight: "95vh",
+            minHeight: "100vh",
             maxHeight: "100vh",
             overflow: "hidden"
           }} fluid>
-            <video playsInline autoPlay muted loop height="inherit">
+            <video playsInline autoPlay muted loop style={{ objectFit: "cover" }}>
               <source src="bg-video.mp4" type="video/mp4"></source>
             </video>
             <div className="position-absolute text-light d-flex flex-column align-items-center justify-content-center card-overlay" style={{ height: "100vh", width: "100%" }}>
@@ -55,16 +55,18 @@ export default function Home() {
             </div>
           </Jumbotron>
         </section>
+
+
         <section className="text-center my-5">
           <a id="howToSection" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
-          <Container>
+          <Container className="hero-container">
             <h2 className="subtitle-text text-warning">{content.howTo.title}</h2>
             <h3 className="text-primary hero-container">{content.howTo.subtitle}</h3>
-            <p className="h5 alternate-font hero-container disappear-in-xs">{content.howTo.text}</p>
-            <Row className="mt-5 px-sm-5">
+            <p className="h5 alternate-font  disappear-in-xs">{content.howTo.text}</p>
+            <Row className="mt-5 ">
               {content.howTo && content.howTo.items.map((item) =>
                 <Col md={6} className="mb-3 mx-auto">
-                  <Image src={item.image} height="130em" alt={item.title} />
+                  <Image src={item.image} width="30%" fluid alt={item.title} />
                   <h3 className="header-text text-warning">{item.title}</h3>
                   <p className="px-2 px-lg-5 text-center alternate-font">{item.text}</p>
                 </Col>
@@ -86,14 +88,15 @@ export default function Home() {
             overflow: "hidden"
           }} fluid >
             <div className="card-overlay py-5 px-2 d-flex  flex-column justify-content-center" style={{ height: "100%", width: "100%", minHeight: "60vh" }}>
-              <Container className="text-light">
+              <Container className="text-light hero-container">
                 <h2 className="subtitle-text">{content.hero1.title}</h2>
-                <h3 className="h3 text-warning hero-container">{content.hero1.subtitle}</h3>
-                <Row className="mt-5 px-sm-5 d-flex justify-content-between">
+                <h3 className="h3 text-warning ">{content.hero1.subtitle}</h3>
+                <p className="hero-container alternate-font">{content.hero1.text}</p>
+                <Row className="mt-5 d-flex justify-content-around">
                   {content.hero1 && content.hero1.items.map((item) =>
-                    <Col className="d-flex flex-column align-items-center justify-content-start" xs={6} md={4} lg={2} >
-                      <Image src={item.image} className="px-4 mb-2" fluid alt={item.title} />
-                      <p className="header-text alternate-font">{item.title}</p></Col>
+                    <Col className="d-flex flex-column align-items-center justify-content-start" xs={4} sm={3} md={2} >
+                      <Image src={item.image} width="60%" className="mb-2" fluid alt={item.title} />
+                      <p className="h6">{item.title}</p></Col>
                   )}
                 </Row>
               </Container>
@@ -186,14 +189,15 @@ const content = {
 
   hero1: {
     title: "Welcome to Unleashed at Sea",
-    subtitle: "Here's what to expect on this EPIC ODYSSEY",
+    subtitle: "Want to learn how to party like a pirate?",
+    text: "The first step is to gather your crew and book your own private boat. If you can't find a crew, join us as a 'solo pirate' and hop on a boat full of like-minded salty strangers. Once you board your boat, it's time to be unleashed! Dozens of boats will come together under one flag to follow our Mother boat through the Tagus and into the sea. We will dance, drink and party; together but separate. One boat to lead us, one song to unite us, dozens of boats to protect us. And when the scorching sun gets you craving for a swim, join one of our many water activities or dive into the Tagus during our refreshing swimming stop. Covid can't stop the takeover. Are you ready to be UNLEASHED?",
     items: [
       {
-        title: "4-Hour Boat Hire",
+        title: "4h Boat Hire",
         image: "catamaran.svg"
       },
       {
-        title: "DJ Set",
+        title: "DJ Set & MC",
         image: "dj.svg"
       },
       {
@@ -201,7 +205,7 @@ const content = {
         image: "six-pack.svg"
       },
       {
-        title: "Speed Boat Ride",
+        title: "Speed Boat",
         image: "powerboat.svg"
       },
       {

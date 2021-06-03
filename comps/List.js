@@ -6,24 +6,32 @@ const List = ({ boats, setSelectedBoat }) => {
     <Row>
       {boats ? boats.map((boat) =>
         <Col xs={12} sm={6} lg={4} className="my-2" key={boat._id + "-boat-card"}>
-
           <Card className="bg-dark overflow-hidden text-center text-light">
             <Carousel interval={null} prevLabel={""} nextLabel={""}>
-              {boat.images && boat.images.map((url) => {
+              {boat.images && boat.images.map((url, index) => {
                 return (
                   <Carousel.Item key={url + "-carousel-image"}>
                     <img
                       className="d-block w-100"
                       src={url}
-                      alt={boat.name}
+                      alt={boat.name + index}
                     />
                   </Carousel.Item>
                 )
               })}
             </Carousel>
             <Card.Header className="w-100 position-absolute card-overlay pb-1">
-              <h4 className="mb-0 header-text">{boat.name} - {boat.capacity}px {boat.type}</h4>
-              <span className="p alternate-font text-light">{boat.price}€  <i className="fas fa-anchor text-warning" />  {boat.dock} </span>
+              {boat.type === "special" ?
+                <>
+                  <h4 className="mb-0 header-text"><span className="text-warning">Special Ticket:</span> {boat.name}</h4>
+                  <span className="p alternate-font text-light">{boat.price}€  <i className="fas fa-anchor text-warning" /> {boat.dock} </span>
+                  <p className="p text-light mb-0">{boat.description}</p>
+                </> :
+                <>
+                  <h4 className="mb-0 header-text">{boat.name} - {boat.capacity}px {boat.type}</h4>
+                  <span className="p alternate-font text-light">{boat.price}€  <i className="fas fa-anchor text-warning" />  {boat.dock} </span>
+                </>
+              }
             </Card.Header>
             {!boat.inStock && <Image className="position-absolute" style={{ transform: "translate(5%, 50%)" }} width="90%" src="sold-out.png" />}
             <Card.Footer className="bg-dark d-flex p-2">

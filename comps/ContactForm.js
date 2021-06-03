@@ -80,7 +80,7 @@ const ContactForm = ({ selectedBoat, setSelectedBoat, promos }) => {
   };
 
   return (
-    <Form className="p-4" onSubmit={handleSubmit}>
+    <Form className="hero-container" onSubmit={handleSubmit}>
       <Form.Group as={Row} className="text-center text-lg-left justify-content-center">
         <Col lg={6} className="mb-4">
           <Form.Label>First Name</Form.Label>
