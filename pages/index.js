@@ -45,7 +45,7 @@ export default function Home() {
             <video playsInline autoPlay muted loop height="inherit">
               <source src="bg-video.mp4" type="video/mp4"></source>
             </video>
-            <div className="position-absolute text-light d-flex flex-column align-items-center justify-content-center card-overlay" style={{ height: "100%", width: "100%" }}>
+            <div className="position-absolute text-light d-flex flex-column align-items-center justify-content-center card-overlay" style={{ height: "100vh", width: "100%" }}>
               <Container>
                 <Image src="logo-main.png" className="border-bottom border-2" style={{ maxHeight: "50vh" }} fluid></Image>
                 <h1 className="d-none">Unleashed at Sea, The Ultimate Boat Party in Lisbon</h1>
