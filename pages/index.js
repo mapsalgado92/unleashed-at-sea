@@ -34,7 +34,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <section id="topSection" className="mb-4 text-center" style={{ height: "100vh" }}>
+        <section className="mb-4 text-center" style={{ height: "100vh" }}>
           <Jumbotron className="d-flex align-items-center justify-content-center" style={{
             backgroundColor: '#FFF',
             backgroundSize: "cover",
@@ -145,7 +145,6 @@ export default function Home() {
             <ContactForm promos={promos} selectedBoat={selectedBoat} setSelectedBoat={setSelectedBoat} />
           </Container>
         </section>
-
       </main>
     </>
   )

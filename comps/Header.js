@@ -26,7 +26,7 @@ const exampleContent = {
   ],
   brand: {
     image: "logo-sm.png",
-    link: "#topSection"
+    link: "/"
   }
 }
 
