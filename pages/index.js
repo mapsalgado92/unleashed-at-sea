@@ -14,8 +14,8 @@ export async function getStaticProps() {
 }
 
 export default function Home(props) {
-  const [boats, setBoats] = useState(data.boats)
-  const [promos, setPromos] = useState(data.promos)
+  const [boats, setBoats] = useState(props.data.boats)
+  const [promos, setPromos] = useState(props.data.promos)
   const [selectedBoat, setSelectedBoat] = useState(null)
 
   /*useEffect(() => {
