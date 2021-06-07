@@ -5,12 +5,14 @@ import List from '../comps/List'
 import ContactForm from '../comps/ContactForm'
 
 export async function getStaticProps() {
-  fetch("/api/data").then(res => res.json()).then(data => {
-    return {
-      props: data,
-      revalidate: 100
-    }
+  data = await fetch("/api/data").then(res => res.json()).then(data => {
+    return data
   })
+
+  return {
+    props: data,
+    revalidate: 120
+  }
 }
 
 export default function Home(props) {
