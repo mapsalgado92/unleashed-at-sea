@@ -4,17 +4,26 @@ import { useState, useEffect } from "react"
 import List from '../comps/List'
 import ContactForm from '../comps/ContactForm'
 
-export default function Home() {
-  const [boats, setBoats] = useState(null)
-  const [promos, setPromos] = useState(null)
+export async function getStaticProps() {
+  fetch("/api/data").then(res => res.json()).then(data => {
+    return {
+      props: data,
+      revalidate: 100
+    }
+  })
+}
+
+export default function Home(props) {
+  const [boats, setBoats] = useState(data.boats)
+  const [promos, setPromos] = useState(data.promos)
   const [selectedBoat, setSelectedBoat] = useState(null)
 
-  useEffect(() => {
+  /*useEffect(() => {
     fetch("/api/data").then(res => res.json()).then(data => {
       setBoats(data.boats)
       setPromos(data.promos)
     })
-  }, [])
+  }, [])*/
 
   return (
     <>
@@ -35,7 +44,7 @@ export default function Home() {
 
       <main>
         <section className="mb-4 text-center" style={{ height: "100vh" }}>
-          <Jumbotron className="d-flex align-items-center justify-content-center" style={{
+          <Jumbotron className="d-flex align-items-center justify-content-center bg-primary" style={{
             backgroundColor: '#FFF',
             backgroundSize: "cover",
             minHeight: "100vh",
@@ -64,8 +73,8 @@ export default function Home() {
             <h3 className="text-primary hero-container">{content.howTo.subtitle}</h3>
             <p className="h5 alternate-font">{content.howTo.text}</p>
             <Row className="mt-5 ">
-              {content.howTo && content.howTo.items.map((item) =>
-                <Col md={6} className="mb-3 mx-auto">
+              {content.howTo && content.howTo.items.map((item, index) =>
+                <Col md={6} className="mb-3 mx-auto" key={"howTo" + index}>
                   <Image src={item.image} width="30%" fluid alt={item.title} />
                   <h3 className="header-text text-warning">{item.title}</h3>
                   <p className="px-2 px-lg-5 text-center alternate-font">{item.text}</p>
@@ -93,8 +102,8 @@ export default function Home() {
                 <h3 className="h3 text-warning ">{content.hero1.subtitle}</h3>
                 <p className="hero-container alternate-font">{content.hero1.text}</p>
                 <Row className="mt-5 d-flex justify-content-around">
-                  {content.hero1 && content.hero1.items.map((item) =>
-                    <Col className="d-flex flex-column align-items-center justify-content-start" xs={4} sm={3} md={2} >
+                  {content.hero1 && content.hero1.items.map((item, index) =>
+                    <Col key={"hero1" + index} className="d-flex flex-column align-items-center justify-content-start" xs={4} sm={3} md={2} >
                       <Image src={item.image} width="60%" className="mb-2" fluid alt={item.title} />
                       <p className="h6">{item.title}</p></Col>
                   )}

@@ -10,7 +10,7 @@ const List = ({ boats, setSelectedBoat }) => {
             <Carousel interval={null} prevLabel={""} nextLabel={""}>
               {boat.images && boat.images.map((url, index) => {
                 return (
-                  <Carousel.Item key={url + "-carousel-image"}>
+                  <Carousel.Item key={url + "-carousel-image" + index}>
                     <img
                       className="d-block w-100"
                       src={url}
