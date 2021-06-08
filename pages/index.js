@@ -125,7 +125,7 @@ export default function Home(props) {
           <a id="boatsSection" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
           <Container>
             <h2 className="subtitle-text text-warning">Our Party Boats</h2>
-            <h3 className="h3 text-primary">Tickets on Sale only until the 25th of June at 23:59</h3>
+            <h3 className="h3 text-primary">Tickets available until the 25th of June at 23:59</h3>
             <p className="h5 text-dark alternate-font hero-container mb-4">Each boat is unique and has its own boarding dock (see description). Make sure you take into account the boat’s passenger capacity when picking your ride.</p>
             <List boats={boats} setSelectedBoat={setSelectedBoat} />
           </Container>
@@ -155,7 +155,7 @@ export default function Home(props) {
           <a id="contactsSection" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
           <Container className="hero-container">
             <h2 className="subtitle-text text-center text-warning">Contact Us</h2>
-            <h3 className="h3 text-primary">Get in touch with us with us to clarigy any doubts you might have</h3>
+            <h3 className="h3 text-primary">Get in touch with us to clarify any doubts you might have.</h3>
             <p className="h5 alternate-font mb-3">Fill the form bellow and submit the your message. We will get in touch with you as soon as we can!</p>
             <ContactForm promos={promos} selectedBoat={selectedBoat} setSelectedBoat={setSelectedBoat} />
           </Container>
