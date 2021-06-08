@@ -10,13 +10,13 @@ export async function getStaticProps() {
   const boats = await db.collection("boats").find({}).sort({ price: 1 }).toArray()
   const promos = await db.collection("promos").find({}).toArray()
 
-  return {
+  return ({
     props: {
       boats: JSON.parse(JSON.stringify(boats)),
       promos: JSON.parse(JSON.stringify(promos))
     },
     revalidate: 120
-  }
+  })
 }
 
 export default function Home(props) {
