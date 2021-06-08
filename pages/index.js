@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Jumbotron, Container, Button, Image, Row, Col, Alert } from 'react-bootstrap'
-import { useState, useEffect } from "react"
+import { useState, Fragment } from "react"
 import List from '../comps/List'
 import ContactForm from '../comps/ContactForm'
 import { connectToDatabase } from '../utils/database'
@@ -24,15 +24,8 @@ export default function Home(props) {
   const [promos, setPromos] = useState(props.promos)
   const [selectedBoat, setSelectedBoat] = useState(null)
 
-  /*useEffect(() => {
-    fetch("/api/data").then(res => res.json()).then(data => {
-      setBoats(data.boats)
-      setPromos(data.promos)
-    })
-  }, [])*/
-
   return (
-    <>
+    <Fragment>
       <Head>
         <title>Unleashed at Sea - Lisbon Boat Festival</title>
         <meta name="description" content="The Ultimate Lisbon Boat Festival, experience the greatest boat concentration party in Portugal. You'll be Unleashed, from the Tagus to the Atlantic, on an unique adventure with dozens of people just as party hungry as yourself." />
@@ -161,7 +154,7 @@ export default function Home(props) {
           </Container>
         </section>
       </main>
-    </>
+    </Fragment>
   )
 }
 
@@ -198,7 +191,7 @@ const content = {
       },
       {
         title: "Have Fun & Be Safe",
-        text: "Groups being divided by Boats makes this event compliant with Covid-19 regulations. All naval safety measures are enforced and the event is approved by all due authorities.",
+        text: "By placing each group in a private boat we avoid crowds and enforce COVID-19 safety standards in a way that amplifies our unity while still partying as one",
         image: "safety.svg",
 
       }]
