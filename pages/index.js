@@ -3,21 +3,25 @@ import { Jumbotron, Container, Button, Image, Row, Col, Alert } from 'react-boot
 import { useState, useEffect } from "react"
 import List from '../comps/List'
 import ContactForm from '../comps/ContactForm'
+import { connectToDatabase } from '../utils/database'
 
 export async function getStaticProps() {
-  data = await fetch("/api/data").then(res => res.json()).then(data => {
-    return data
-  })
+  const { db } = await connectToDatabase()
+  const boats = await db.collection("boats").find({}).sort({ price: 1 }).toArray()
+  const promos = await db.collection("promos").find({}).toArray()
 
   return {
-    props: data,
+    props: {
+      boats: JSON.parse(JSON.stringify(boats)),
+      promos: JSON.parse(JSON.stringify(promos))
+    },
     revalidate: 120
   }
 }
 
 export default function Home(props) {
-  const [boats, setBoats] = useState(props.data.boats)
-  const [promos, setPromos] = useState(props.data.promos)
+  const [boats, setBoats] = useState(props.boats)
+  const [promos, setPromos] = useState(props.promos)
   const [selectedBoat, setSelectedBoat] = useState(null)
 
   /*useEffect(() => {
