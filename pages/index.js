@@ -47,7 +47,6 @@ export default function Home(props) {
                   "priceCurrency": "€",
                   "url": "https://feverup.com/m/99106"
                 },
-
                 url: "https://unleashedatsea.com",
                 startDate: "2021-06-27T14:30",
                 duration: "PT4H00M",
