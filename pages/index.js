@@ -39,7 +39,7 @@ export default function Home(props) {
                 location: {
                   "@type": "Place",
                   name: "Lisbon, Tagus River",
-                  address: "N/A"
+                  address: null
                 },
                 name: "Unleashed at Sea",
                 offers: {
@@ -57,10 +57,10 @@ export default function Home(props) {
                 image: "https://unleashedatsea.com/hero1.jpg",
                 description: "Experience the most massive floating event to ever be thrown in Portugal. You'll be Unleashed, from the Tagus to the Atlantic, on an unique adventure with dozens of people just as party hungry as yourself. Are you ready to be Unleashed?",
                 eventStatus: "EventScheduled",
-                organizer: "N/A",
+                organizer: null,
                 eventAttendanceMode: "OfflineEventAttendanceMode",
                 endDate: "2021-06-27T18:30",
-                performer: "N/A",
+                performer: null,
 
 
               }
