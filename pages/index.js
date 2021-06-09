@@ -38,21 +38,30 @@ export default function Home(props) {
                 "@type": "Event",
                 location: {
                   "@type": "Place",
-                  "name": "Lisbon, Tagus River"
+                  name: "Lisbon, Tagus River",
+                  address: ""
                 },
                 name: "Unleashed at Sea",
                 offers: {
                   "@type": "Offer",
                   "minPrice": "69.00",
                   "priceCurrency": "€",
-                  "url": "https://feverup.com/m/99106"
+                  "url": "https://feverup.com/m/99106",
+                  price: "",
+                  availability: "LimitedAvailability",
+                  validFrom: "2021-06-64T18:30"
                 },
                 url: "https://unleashedatsea.com",
                 startDate: "2021-06-27T14:30",
                 duration: "PT4H00M",
                 image: "https://unleashedatsea.com/hero1.png",
                 description: "Experience the most massive floating event to ever be thrown in Portugal. You'll be Unleashed, from the Tagus to the Atlantic, on an unique adventure with dozens of people just as party hungry as yourself. Are you ready to be Unleashed?",
-                eventStatus: "Confirmed",
+                eventStatus: "EventScheduled",
+                organizer: "",
+                eventAttendanceMode: "OfflineEventAttendanceMode",
+                endDate: "2021-06-27T18:30",
+                performer: "",
+
 
               }
             )
