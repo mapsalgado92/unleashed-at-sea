@@ -41,7 +41,7 @@ export default function Home(props) {
                   name: "Lisbon, Tagus River",
                   address: null
                 },
-                name: "Unleashed at Sea",
+                name: "Unleashed at Sea - The Lisbon Boat Festival",
                 offers: {
                   "@type": "Offer",
                   "minPrice": "69.00",
@@ -79,7 +79,17 @@ export default function Home(props) {
 
         <link rel="canonical" href="https://unleashedatsea.com" />
 
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon-32x32.png" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
           integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
