@@ -27,9 +27,46 @@ export default function Home(props) {
   return (
     <Fragment>
       <Head>
-        <title>Unleashed at Sea - Lisbon Boat Festival</title>
+        <title>Unleashed at Sea - The Lisbon Boat Festival</title>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              {
+                "@context": "http://schema.org",
+                "@type": "Event",
+                "location": {
+                  "@type": "Place",
+                  "name": "Lisbon, Tagus River"
+                },
+                "name": "Unleashed at Sea",
+                "offers": {
+                  "@type": "Offer",
+                  "minPrice": "69.00",
+                  "priceCurrency": "€",
+                  "url": "https://feverup.com/m/99106"
+                },
+
+                "url": "https://unleashedatsea.com",
+                "startDate": "2021-06-27T14:30",
+                "duration": "PT4H00M"
+              }
+            )
+          }} />
+
+
         <meta name="description" content="The Ultimate Lisbon Boat Festival, experience the greatest boat concentration party in Portugal. You'll be Unleashed, from the Tagus to the Atlantic, on an unique adventure with dozens of people just as party hungry as yourself." />
         <meta name="keywords" content="unleashed at sea festival boats waves lisbon festa lisboa barco crazy Covid-19 Safe Lisboa Party Festa Lisboa" />
+
+        <meta property="og:title" content="Unleashed at Sea - The Lisbon Boat Festival" />
+        <meta property="og:description" content="The Ultimate Lisbon Boat Festival, experience the greatest boat concentration party in Portugal." />
+        <meta property="og:type" content="You'll be Unleashed, from the Tagus to the Atlantic, on an unique adventure with dozens of people just as party hungry as yourself. Experience the most massive floating event to ever be thrown in Portugal! We have been tied up for far too long! Now it\'s time to break free and party under the Lisbon sun. Dozens of boats, hundreds of pirates and unlimited madness come together to create Lisbon's only aquatic festival. Dance through the Tagus and let our party captains take you on a journey full of surprises. Are you ready to be UNLEASHED?" />
+        <meta property="og:image" content="https://unleashedatsea.com/hero1.png" />
+        <meta property="og:url" content="https://unleashedatsea.com" />
+
+        <link rel="canonical" href="https://unleashedatsea.com" />
+
         <link rel="icon" href="/favicon.ico" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
@@ -55,8 +92,9 @@ export default function Home(props) {
             </video>
             <div className="position-absolute text-light d-flex flex-column align-items-center justify-content-center card-overlay" style={{ height: "100vh", width: "100%" }}>
               <Container>
-                <Image src="logo-main.png" className="border-bottom border-2" style={{ maxHeight: "50vh" }} fluid></Image>
-                <h1 className="d-none">Unleashed at Sea, The Ultimate Boat Party in Lisbon</h1>
+                <Image src="logo-sm.png" className="border-bottom border-2" style={{ maxHeight: "50vh" }} fluid></Image>
+                <h1 className="d-none">Unleashed at Sea</h1>
+                <h2 className="h1">The Lisbon Boat Festival</h2>
                 <h2 className="mb-0 h3 alternate-font">Sunday - 27.06.2021</h2>
                 <h2 className="h3 mb-0 alternate-font">14:30 - 18:30</h2>
               </Container>
