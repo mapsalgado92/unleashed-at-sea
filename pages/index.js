@@ -36,21 +36,25 @@ export default function Home(props) {
               {
                 "@context": "http://schema.org",
                 "@type": "Event",
-                "location": {
+                location: {
                   "@type": "Place",
                   "name": "Lisbon, Tagus River"
                 },
-                "name": "Unleashed at Sea",
-                "offers": {
+                name: "Unleashed at Sea",
+                offers: {
                   "@type": "Offer",
                   "minPrice": "69.00",
                   "priceCurrency": "€",
                   "url": "https://feverup.com/m/99106"
                 },
 
-                "url": "https://unleashedatsea.com",
-                "startDate": "2021-06-27T14:30",
-                "duration": "PT4H00M"
+                url: "https://unleashedatsea.com",
+                startDate: "2021-06-27T14:30",
+                duration: "PT4H00M",
+                image: "https://unleashedatsea.com/hero1.png",
+                description: "Experience the most massive floating event to ever be thrown in Portugal. You'll be Unleashed, from the Tagus to the Atlantic, on an unique adventure with dozens of people just as party hungry as yourself. Are you ready to be Unleashed?",
+                eventStatus: "Confirmed",
+
               }
             )
           }} />
@@ -60,8 +64,8 @@ export default function Home(props) {
         <meta name="keywords" content="unleashed at sea festival boats waves lisbon festa lisboa barco crazy Covid-19 Safe Lisboa Party Festa Lisboa" />
 
         <meta property="og:title" content="Unleashed at Sea - The Lisbon Boat Festival" />
-        <meta property="og:description" content="The Ultimate Lisbon Boat Festival, experience the greatest boat concentration party in Portugal." />
-        <meta property="og:type" content="You'll be Unleashed, from the Tagus to the Atlantic, on an unique adventure with dozens of people just as party hungry as yourself. Experience the most massive floating event to ever be thrown in Portugal! We have been tied up for far too long! Now it\'s time to break free and party under the Lisbon sun. Dozens of boats, hundreds of pirates and unlimited madness come together to create Lisbon's only aquatic festival. Dance through the Tagus and let our party captains take you on a journey full of surprises. Are you ready to be UNLEASHED?" />
+        <meta property="og:description" content="Experience the greatest boat concentration party in Portugal. Are you ready to be Unleashed?" />
+        <meta property="og:type" content="website" />
         <meta property="og:image" content="https://unleashedatsea.com/hero1.png" />
         <meta property="og:url" content="https://unleashedatsea.com" />
 
