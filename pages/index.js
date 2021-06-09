@@ -54,7 +54,7 @@ export default function Home(props) {
                 url: "https://unleashedatsea.com",
                 startDate: "2021-06-27T14:30",
                 duration: "PT4H00M",
-                image: "https://unleashedatsea.com/hero1.png",
+                image: "https://unleashedatsea.com/hero1.jpg",
                 description: "Experience the most massive floating event to ever be thrown in Portugal. You'll be Unleashed, from the Tagus to the Atlantic, on an unique adventure with dozens of people just as party hungry as yourself. Are you ready to be Unleashed?",
                 eventStatus: "EventScheduled",
                 organizer: "",
@@ -74,7 +74,7 @@ export default function Home(props) {
         <meta property="og:title" content="Unleashed at Sea - The Lisbon Boat Festival" />
         <meta property="og:description" content="Experience the greatest boat concentration party in Portugal. Are you ready to be Unleashed?" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://unleashedatsea.com/hero1.png" />
+        <meta property="og:image" content="https://unleashedatsea.com/hero1.jpg" />
         <meta property="og:url" content="https://unleashedatsea.com" />
 
         <link rel="canonical" href="https://unleashedatsea.com" />
