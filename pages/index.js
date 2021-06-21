@@ -23,6 +23,7 @@ export default function Home(props) {
   const [boats, setBoats] = useState(props.boats)
   const [promos, setPromos] = useState(props.promos)
   const [selectedBoat, setSelectedBoat] = useState(null)
+  const [blocked, setBlocked] = useState(true)
 
   return (
     <Fragment>
@@ -117,8 +118,9 @@ export default function Home(props) {
                 <Image src="logo-sm.png" className="border-bottom border-2" style={{ maxHeight: "50vh" }} fluid></Image>
                 <h1 className="d-none">Unleashed at Sea</h1>
                 <h2 className="h1">The Lisbon Boat Festival</h2>
-                <h2 className="mb-0 h3 alternate-font">Sunday - 27.06.2021</h2>
-                <h2 className="h3 mb-0 alternate-font">14:30 - 18:30</h2>
+                {!blocked && <h2 className="mb-0 h3 alternate-font">Sunday - 27.06.2021</h2>}
+                {!blocked && <h2 className="h3 mb-0 alternate-font">14:30 - 18:30</h2>}
+                {blocked && <h2>Waiting for new Date!</h2>}
               </Container>
             </div>
           </Jumbotron>
@@ -142,9 +144,6 @@ export default function Home(props) {
             </Row>
           </Container>
         </section>
-
-
-
 
         <section className="text-center my-5">
           <a id="hero1Section" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
@@ -172,15 +171,13 @@ export default function Home(props) {
           </Jumbotron>
         </section>
 
-
-
         <section className="text-center my-5">
           <a id="boatsSection" style={{ position: "relative", top: "-5em", display: "hidden" }}></a>
           <Container>
             <h2 className="subtitle-text text-warning">Our Party Boats</h2>
             <h3 className="h3 text-primary">Tickets available until the 25th of June at 23:59</h3>
             <p className="h5 text-dark alternate-font hero-container mb-4">Each boat is unique and has its own boarding dock (see description). Make sure you take into account the boat’s passenger capacity when picking your ride.</p>
-            <List boats={boats} setSelectedBoat={setSelectedBoat} />
+            <List boats={boats} setSelectedBoat={setSelectedBoat} blocked={blocked} />
           </Container>
         </section>
 

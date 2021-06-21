@@ -1,6 +1,6 @@
 import { Row, Col, Card, Container, Carousel, Button, Alert, Jumbotron, Image } from 'react-bootstrap'
 
-const List = ({ boats, setSelectedBoat }) => {
+const List = ({ boats, setSelectedBoat, blocked }) => {
   return (
 
     <Row className="justify-content-center">
@@ -35,11 +35,11 @@ const List = ({ boats, setSelectedBoat }) => {
             </Card.Header>
             {!boat.inStock && <Image className="position-absolute" style={{ transform: "translate(5%, 50%)" }} width="90%" src="sold-out.png" />}
             <Card.Footer className="bg-dark d-flex p-2">
-              <Button variant="outline-warning" href="#contactsSection" disabled={!boat.inStock}
+              <Button variant="outline-warning" href="#contactsSection" disabled={!boat.inStock || blocked}
                 onClick={() => {
                   setSelectedBoat(boat.name)
                 }} className="w-50 mx-1 p-2 text-light">Have a code?</Button>
-              <Button variant="primary" disabled={!boat.inStock} href="https://feverup.com/m/99106" target="_blank" className="w-50 mx-1 py-2 px-0">Buy Ticket!</Button>
+              <Button variant="primary" disabled={!boat.inStock || blocked} href="https://feverup.com/m/99106" target="_blank" className="w-50 mx-1 py-2 px-0">Buy Ticket!</Button>
             </Card.Footer>
           </Card>
         </Col>

@@ -17,7 +17,7 @@ const exampleContent = {
     },
     {
       text: "Tickets",
-      link: "https://feverup.com/m/99106",
+      link: "/",
       isButton: true,
       variant: "warning",
       classes: "p-2",
@@ -26,8 +26,9 @@ const exampleContent = {
   ],
   brand: {
     image: "logo-sm.png",
-    link: "/"
-  }
+    link: "#/"
+  },
+  blocked: true
 }
 
 const Header = ({ content }) => {
@@ -57,7 +58,7 @@ const Header = ({ content }) => {
             <Nav className="d-flex ms-auto align-items-center">
               {exampleContent.links && exampleContent.links.map((item) =>
                 <Nav.Link key={item.text + "header-link"} className="text-light ms-auto" href={item.link} target={item.external ? "_blank" : null}>
-                  {item.isButton ? <Button className={item.classes} variant={item.variant}>{item.text}</Button> : item.text}
+                  {item.isButton ? !exampleContent.blocked && <Button className={item.classes} variant={item.variant}>{item.text}</Button> : item.text}
                 </Nav.Link>
               )}
             </Nav >
